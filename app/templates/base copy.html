@@ -9,27 +9,31 @@
     {% endblock %}
 </head>
 <body>
+    <nav>
+        <a href="{{ url_for('tool') }}">Tool</a>
+        <a href="{{ url_for('store') }}">yo!zoom 스토어</a>
+        <a href="{{ url_for('index') }}">Tool 요청</a>
+    </nav>
+
     <div class="wrapper">
-        <div class="dropdown">
-            <button class="dropbtn">Email Address Examples.</button>
-            <div class="dropdown-content">
-                <ul>
-                    <li><a href="{{ url_for('tool') }}">Tool</a></li>
-                    <li><a href="{{ url_for('store') }}">yo!zoom 스토어</a></li>
-                    <li><a href="{{ url_for('index') }}">Tool 요청</a></li>
-                </ul>
-            </div>
+        <div class="sidebar">
+            <h3>사이드바 메뉴</h3>
+            <ul>
+                <a href="{{ url_for('tool') }}">Tool</a>
+                <a href="{{ url_for('store') }}">yo!zoom 스토어</a>
+                <a href="{{ url_for('index') }}">Tool 요청</a>
+            </ul>
         </div>
         <div class="container">
             {% block content %}
             {% endblock %}
         </div>
     </div>
+
     <footer>
         <p>2024 ©찾다 All rights reserved</p>
         <p><a href="mailto:contact@chat-da.com">contact@chat-da.com</a></p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
 

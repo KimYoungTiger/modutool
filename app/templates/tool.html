@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    
+    <section class="category">
+        <h2>New 도구</h2>
+        <div class="tools">
+            <a href="{{ url_for('test') }}" class="tool"><img src="path_to_icon" alt="icon1"><span>도구 이름</span></a>
+            <!-- 추가 도구 -->
+        </div>
+    </section>
+
+    <div class="button-container">
+        <a href="https://example.com" class="button">Go to Example</a>
+        <a href="https://google.com" class="button">Go to Google</a>
+        <a href="https://facebook.com" class="button">Go to Facebook</a>
+    </div>
+
+    <!-- 추가 카테고리 -->
+
+</div>
+
+{% endblock %}

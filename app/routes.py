@@ -5,6 +5,15 @@ from app.models import Content
 
 def init_routes(app):
     @app.route('/')
+    def tool():
+        contents = Content.query.all()
+        return render_template('tool.html', contents=contents)
+    
+    @app.route('/store')
+    def store():
+        return render_template('store.html')
+    
+    @app.route('/index')
     def index():
         contents = Content.query.all()
         return render_template('index.html', contents=contents)
@@ -45,3 +54,7 @@ def init_routes(app):
             db.session.commit()
             return redirect(url_for('index'))
         return render_template('tool_searching.html')
+
+    @app.route('/test')
+    def test():
+        return render_template('test.html')
