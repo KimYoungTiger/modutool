@@ -1,10 +1,9 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 from config import Config
-
-db = SQLAlchemy()
-migrate = Migrate()
+from .extensions import db, migrate
+from .main import main as main_blueprint
+from .auth import auth as auth_name_blueprint
+from .api import api as api_blueprint
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -12,10 +11,6 @@ def create_app(config_class=Config):
 
     db.init_app(app)
     migrate.init_app(app, db)
-
-    # 라우트 및 블루프린트 설정
-    from app.routes import init_routes  # 경로 수정 필요
-    init_routes(app)
 
     # 에러 핸들링
     @app.errorhandler(404)
@@ -26,5 +21,10 @@ def create_app(config_class=Config):
     def internal_error(error):
         db.session.rollback()
         return "Internal server error", 500
+
+    # Blueprint 등록
+    app.register_blueprint(main_blueprint, url_prefix='/')
+    app.register_blueprint(auth_name_blueprint, url_prefix='/auth')
+    app.register_blueprint(api_blueprint, url_prefix='/api')
 
     return app
