@@ -9,49 +9,49 @@ main = Blueprint('main', __name__, template_folder='templates')
 @main.route('/')
 def home():
     contents = Content.query.all()
-    return render_template('home.html', contents=contents)
+    return render_template('main/home.html', contents=contents)
 
 @main.route('/tool')
 def tool():
-    return render_template('tool.html')
+    return render_template('main/tool.html')
 
 @main.route('/store')
 def store():
-    return render_template('store.html')
+    return render_template('main/store.html')
 
 @main.route('/tool-request')
 def tool_request():
     contents = Content.query.all()
-    return render_template('tool-request.html', contents=contents)
+    return render_template('tool_request/tool_list.html', contents=contents)
 
-@main.route('/add', methods=['GET', 'POST'])
+@main.route('/tool-request/add', methods=['GET', 'POST'])
 def add_content():
     form = DataForm()
     if form.validate_on_submit():
         new_content = Content(title=form.title.data, author=form.author.data, genre=form.genre.data)
         db.session.add(new_content)
         db.session.commit()
-        return redirect(url_for('main.home'))
-    return render_template('add-content.html', form=form)
+        return redirect(url_for('main.tool_request'))
+    return render_template('tool_request/add_content.html', form=form)
 
-@main.route('/edit/<int:id>', methods=['GET', 'POST'])
+@main.route('/tool-request/edit/<int:id>', methods=['GET', 'POST'])
 def edit_content(id):
     content = Content.query.get_or_404(id)
     form = DataForm(obj=content)
     if form.validate_on_submit():
         form.populate_obj(content)
         db.session.commit()
-        return redirect(url_for('main.home'))
-    return render_template('edit-content.html', form=form, content=content, id=id)
+        return redirect(url_for('main.tool_request'))
+    return render_template('tool_request/edit_content.html', form=form, content=content, id=id)
 
-@main.route('/delete/<int:id>', methods=['POST'])
+@main.route('/tool-request/delete/<int:id>', methods=['POST'])
 def delete_content(id):
     content = Content.query.get_or_404(id)
     db.session.delete(content)
     db.session.commit()
-    return redirect(url_for('main.home'))
+    return redirect(url_for('main.tool_request'))
 
-@main.route('/tool-searching/', methods=['POST'])
+@main.route('/store-tool/searching/', methods=['POST'])
 def tool_searching(id):
     content = Content.query.get_or_404(id)
     form = DataForm(obj=content)
@@ -59,8 +59,5 @@ def tool_searching(id):
         db.session.delete(content)
         db.session.commit()
         return redirect(url_for('main.home'))
-    return render_template('tool-searching.html')
+    return render_template('store_tool/searching.html')
 
-@main.route('/test')
-def test():
-    return render_template('test.html')

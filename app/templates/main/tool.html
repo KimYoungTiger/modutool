@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container px-4 py-5" id="icon-grid" >
+
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <h2>스토어 랭킹 검색</h2>
+        <p>스토어에 판매되고 있는 제품의 랭킹을 검색합니다.</p>
+        <button class="btn btn-outline-light" type="button">button</button>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <h2>제품별 인기 키워드 검색</h2>
+        <p>제품별 상위 노출되는 키워드를 알려줍니다.</p>
+        <button class="btn btn-outline-light" type="button">button</button>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <h2>스토어 랭킹 검색</h2>
+        <p>스토어에 판매되고 있는 제품의 랭킹을 검색합니다.</p>
+        <button class="btn btn-outline-light" type="button">button</button>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

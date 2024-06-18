@@ -18,8 +18,18 @@
             </a>
     
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                <li><a href="{{ url_for('main.tool')}}" class="nav-link px-2 text-secondary">Tool</a></li>
+                <li><a href="{{ url_for('main.home')}}" class="nav-link px-2 text-secondary">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdownTool" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tool
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-macos mx-0 border-0 shadow" aria-labelledby="navbarDropdownTool" style="width: 220px;">
+                        <li><a class="dropdown-item" href="{{ url_for('main.tool')}}">전체 Tool</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sub Tool 2</a></li>
+                        <li><a class="dropdown-item" href="#">Sub Tool 3</a></li>
+                    </ul>
+                </li>
                 <li><a href="{{ url_for('main.store')}}" class="nav-link px-2 text-secondary">yo!zoom 스토어</li>
                 <li><a href="{{ url_for('main.tool_request')}}" class="nav-link px-2 text-secondary">Tool 요청</a></li>
             </ul>

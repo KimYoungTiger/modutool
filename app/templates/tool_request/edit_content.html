@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>Edit Content</h1>
-<form method="POST" action="{{ url_for('main.edit-content', id=id) }}">
+<form method="POST" action="{{ url_for('main.edit_content', id=id) }}">
     {{ form.hidden_tag() }}
     <p>
         {{ form.title.label }}<br>
