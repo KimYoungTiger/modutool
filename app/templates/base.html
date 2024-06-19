@@ -26,8 +26,7 @@
                     <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-macos mx-0 border-0 shadow" aria-labelledby="navbarDropdownTool" style="width: 220px;">
                         <li><a class="dropdown-item" href="{{ url_for('main.tool')}}">전체 Tool</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Sub Tool 2</a></li>
-                        <li><a class="dropdown-item" href="#">Sub Tool 3</a></li>
+                        <li><a class="dropdown-item" href="#">스토어 제품 랭킹 검색</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ url_for('main.store')}}" class="nav-link px-2 text-secondary">yo!zoom 스토어</li>
@@ -46,10 +45,10 @@
         </div>
     </header>
 
-    <div class="container">
-        {% block content %}
-        {% endblock %}
-    </div>
+
+    {% block content %}
+    {% endblock %}
+
 
     <div class=container>
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">

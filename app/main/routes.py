@@ -51,13 +51,4 @@ def delete_content(id):
     db.session.commit()
     return redirect(url_for('main.tool_request'))
 
-@main.route('/store-tool/searching/', methods=['POST'])
-def tool_searching(id):
-    content = Content.query.get_or_404(id)
-    form = DataForm(obj=content)
-    if form.validate_on_submit():
-        db.session.delete(content)
-        db.session.commit()
-        return redirect(url_for('main.home'))
-    return render_template('store_tool/searching.html')
 
