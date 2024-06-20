@@ -11,7 +11,7 @@
 
 <div class="container">
     <!-- Form action updated to submit to the searching route, method set to POST -->
-    <form action="{{ url_for('tool.searching') }}" method="POST">
+    <form action="{{ url_for('tool.search_ranking_product') }}" method="POST">
         <div class="mb-3 col-6">
             <label for="keywordInput" class="form-label">키워드</label>
             <input type="text" class="form-control" id="keywordInput" name="search_query" required>
@@ -39,5 +39,20 @@
         </div>
         <button type="submit" class="btn btn-secondary">확인</button>
     </form>
+
+
+    <!-- 결과 표시 영역 -->
+    {% if search_initiated %}
+        <h3>검색 결과</h3>
+        {% if results %}
+            <ul class="list-group">
+                {% for result in results %}
+                    <li class="list-group-item">{{ result.title }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>검색 결과가 없습니다.</p>
+        {% endif %}
+    {% endif %}
 </div>
 {% endblock %}
