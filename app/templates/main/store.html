@@ -2,31 +2,33 @@
 
 {% block head %}
 {{ super() }}
+
+<!-- Open Graph meta tags -->
+<meta property="og:title" content="르미넌트 : 네이버쇼핑 스마트스토어">
+<meta property="og:description" content="요즘 스타일의 반짝반짝 빛나는 쥬얼리 스토어">
+<meta property="og:image" content="https://smartstore.naver.com/luminant_/image.jpg">
+<meta property="og:url" content="https://smartstore.naver.com/luminant_">
+<meta property="og:type" content="website">
+
 {% endblock %}
 
 {% block content %}
 
 <div class="container px-4 py-5" id="icon-grid">
-    <h2 class="pb-2 border-bottom">요즘 스토어</h2>
+  <h2 class="pb-2 border-bottom">요즘 스토어</h2>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
       <div class="col d-flex align-items-start">
-        <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"></use></svg>
-        <div>
-          <h4 class="fw-bold mb-0">르미넌트</h4>
-          <p>123</p>
-          <button class="btn btn-outline-light" type="button">button</button>
-        </div>
+          <div style="border: 1px solid #ccc; border-radius: 8px; padding: 20px; background-color: #f8f9fa; width: 100%;">
+              <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"></use></svg>
+              <div>
+                  <h4 class="fw-bold mb-0">luminant</h4>
+                  <p>일상을 빛내는 주얼리</p>
+                  <a class="btn btn-outline-secondary" href="https://smartstore.naver.com/luminant_" target="_blank" role="button" style="display: inline-block; padding: 10px 20px; text-decoration: none;">Visit Store</a>
+              </div>
+          </div>
       </div>
-      <div class="col d-flex align-items-start">
-        <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#cpu-fill"></use></svg>
-        <div>
-          <h4 class="fw-bold mb-0">Luminant</h4>
-          <p>456</p>
-          <button class="btn btn-outline-light" type="button">button</button>
-        </div>
-      </div>
-    </div>
   </div>
+</div>
 
 {% endblock %}

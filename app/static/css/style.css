@@ -9,3 +9,13 @@
         max-width: 200px; /* 이 너비를 자유롭게 조정하여 원하는 크기 설정 */
     }
 }
+
+
+.clickable-div {
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.clickable-div:hover {
+    background-color: #495057; /* 원하는 색상으로 변경 */
+    box-shadow: 0 4px 8px rgba(211, 206, 206, 0.2);
+}

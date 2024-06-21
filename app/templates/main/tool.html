@@ -2,51 +2,33 @@
 
 {% block head %}
 {{ super() }}
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
 
-<div class="container px-4 py-5" id="icon-grid" >
+<div class="container" id="icon-grid" >
 
-  <div class="row">
-    <div class="col-12 col-md-4">
-      <div class="h-100 p-5 text-white bg-dark rounded-3">
+  <div class="row px-4 py-5">
+    <div class="col-12 col-md-4 mt-3">
+      <button type="button" class="btn btn-outline-light me-2" style="min-height: 200px; width: 100%;" onclick="location.href='{{ url_for('tool.search_ranking_product') }}'">
         <h2>스토어 제품 순위 검색</h2>
-        <p>특정 키워드로 검색했을때 스토어의 제품 순위를 알려줍니다.</p>
-        <a href="{{ url_for('tool.search_ranking_product')}}" class="btn btn-outline-light" role="button">button</a>
-      </div>
+        <p>검색했을 때 스토어의 제품 순위를 알려줍니다. 100개까지 검색됩니다.</p>
+      </button>
     </div>
-    <div class="col-12 col-md-4">
-      <div class="h-100 p-5 text-white bg-dark rounded-3">
+    <div class="col-12 col-md-4 mt-3">
+      <button type="button" class="btn btn-outline-light me-2" style="min-height: 200px; width: 100%;" onclick="location.href='http://example.com/product-list'">
         <h2>제품별 인기 키워드 검색</h2>
         <p>제품별 상위 노출되는 키워드를 알려줍니다.</p>
-        <a href="http://example.com/link2" class="btn btn-outline-light" role="button">button</a>
-      </div>
+      </button>
     </div>
-    <div class="col-12 col-md-4">
-      <div class="h-100 p-5 text-white bg-dark rounded-3">
-        <h2>스토어 제품 순위</h2>
-        <p>.</p>
-        <a href="http://example.com/link3" class="btn btn-outline-light" role="button">button</a>
-      </div>
+    <div class="col-12 col-md-4 mt-3">
+      <button type="button" class="btn btn-outline-light me-2" style="min-height: 200px; width: 100%;" onclick="location.href='{{ url_for('tool.list_product') }}'">
+        <h2>스토어 제품 리스트</h2>
+        <p>스토어에 판매되고 있는 제품리스트를 순서대로 알려줍니다. 100개까지 검색됩니다.</p>
+      </button>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-12 col-md-4">
-      <div class="h-100 p-5 text-white bg-dark rounded-3">
-        <h2>제품별 인기 키워드 검색</h2>
-        <p>제품별 상위 노출되는 키워드를 알려줍니다.</p>
-        <a href="http://example.com/link2" class="btn btn-outline-light" role="button">button</a>
-      </div>
-    </div>
-    <div class="col-12 col-md-4">
-      <div class="h-100 p-5 text-white bg-dark rounded-3">
-        <h2>스토어 랭킹 검색</h2>
-        <p>스토어에 판매되고 있는 제품의 랭킹을 검색합니다.</p>
-        <a href="http://example.com/link3" class="btn btn-outline-light" role="button">button</a>
-      </div>
-    </div>
-  </div>
 
 {% endblock %}

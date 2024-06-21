@@ -27,15 +27,12 @@
                         <li><a class="dropdown-item" href="{{ url_for('main.tool')}}">전체 Tool</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{ url_for('tool.search_ranking_product')}}">스토어 제품 순위 검색</a></li>
-                        <li><a class="dropdown-item" href="#">네이버 쇼핑 검색 결과</a></li>
-                        <li><a class="dropdown-item" href="#">제품별 상위 노출 키워드</a></li>
-                        <li><a class="dropdown-item" href="#">스토어 제품 랭킹 검색</a></li>
-                        <li><a class="dropdown-item" href="#">스토어 제품 랭킹 검색</a></li>
-                        <li><a class="dropdown-item" href="#">스토어 제품 랭킹 검색</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('tool.search_keyword')}}">제품별 인기 키워드 검색</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('tool.list_product')}}">스토어 제품 리스트</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ url_for('main.store')}}" class="nav-link px-2 text-secondary">yo!zoom 스토어</li>
-                <li><a href="{{ url_for('main.tool_request')}}" class="nav-link px-2 text-secondary">Tool 요청</a></li>
+                <li><a href="{{ url_for('main.store')}}" class="nav-link px-2 text-secondary">요즘 스토어</li>
+                <li><a href="{{ url_for('main.tool_request')}}" class="nav-link px-2 text-secondary">Tool 요청게시판</a></li>
             </ul>
     
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -50,10 +47,10 @@
         </div>
     </header>
 
-
+    <body class="bg-dark">
     {% block content %}
     {% endblock %}
-
+    </body>
 
     <div class=container>
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -76,10 +73,8 @@
 
     <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
-
 </body>
 
 </html>

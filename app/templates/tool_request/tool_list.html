@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container px-4 py-5" id="icon-grid">
+<div class="container px-4 py-5 text-white" id="icon-grid">
     <h2 class="pb-2 border-bottom">Tool 요청</h2>
     <div class="text-end">
         <a href="{{ url_for('main.add_content')}}" class="btn btn-secondary my-2">요청 글쓰기</a>
@@ -19,7 +19,7 @@
                 <th>추천수</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="color: white;">
             {% for content in contents %}
             <tr>
                 <td>{{ content.title }}</td>

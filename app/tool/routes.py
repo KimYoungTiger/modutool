@@ -2,9 +2,8 @@ from flask import render_template, redirect, url_for, request, Blueprint
 from app.extensions import db, migrate
 from app.forms import DataForm
 from app.models import Content
-import urllib.request
 from . import tool
-from ..services import perform_search
+import app.services
 
 @tool.route('/search-ranking-product', methods=['GET', 'POST'])
 def search_ranking_product():
@@ -16,7 +15,28 @@ def search_ranking_product():
         store_name = request.form.get('store_name')
         search_sort = request.form.get('search_sort')
         # 검색 처리 로직 구현
-        results = perform_search(search_query, store_name, search_sort)  # 실제 검색 함수 호출
+        results = app.services.perform_search_ranking_product(search_query, store_name, search_sort)  # 실제 검색 함수 호출
         search_initiated = True
     
     return render_template('tool/search_ranking_product.html', results=results, search_initiated=search_initiated)
+
+@tool.route('/list-product', methods=['GET', 'POST'])
+def list_product():
+    results = None
+    search_initiated = False
+    
+    if request.method == 'POST':
+        store_name = request.form.get('store_name')
+        search_sort = request.form.get('search_sort')
+        # 검색 처리 로직 구현
+        results = app.services.perform_list_product(store_name, search_sort)  # 실제 검색 함수 호출
+        search_initiated = True
+    
+    return render_template('tool/list_product.html', results=results, search_initiated=search_initiated)
+
+@tool.route('/search-keyword', methods=['GET', 'POST'])
+def search_keyword():
+    results = None
+    search_initiated = False
+    
+    return render_template('tool/search_keyword.html', results=results, search_initiated=search_initiated)
