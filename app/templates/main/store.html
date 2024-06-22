@@ -6,7 +6,7 @@
 <!-- Open Graph meta tags -->
 <meta property="og:title" content="르미넌트 : 네이버쇼핑 스마트스토어">
 <meta property="og:description" content="요즘 스타일의 반짝반짝 빛나는 쥬얼리 스토어">
-<meta property="og:image" content="https://smartstore.naver.com/luminant_/image.jpg">
+<meta property="og:image" content="	https://shop-phinf.pstatic.net/20231121_141/170053…3_PNG/101675646239313462_1867653494.png?type=m120">
 <meta property="og:url" content="https://smartstore.naver.com/luminant_">
 <meta property="og:type" content="website">
 
@@ -15,20 +15,18 @@
 {% block content %}
 
 <div class="container px-4 py-5" id="icon-grid">
-  <h2 class="pb-2 border-bottom">요즘 스토어</h2>
+  <h2 class="pb-2 border-bottom text-white">요즘 스토어</h2>
 
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
-      <div class="col d-flex align-items-start">
-          <div style="border: 1px solid #ccc; border-radius: 8px; padding: 20px; background-color: #f8f9fa; width: 100%;">
-              <svg class="bi text-muted flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#bootstrap"></use></svg>
-              <div>
-                  <h4 class="fw-bold mb-0">luminant</h4>
-                  <p>일상을 빛내는 주얼리</p>
-                  <a class="btn btn-outline-secondary" href="https://smartstore.naver.com/luminant_" target="_blank" role="button" style="display: inline-block; padding: 10px 20px; text-decoration: none;">Visit Store</a>
-              </div>
-          </div>
-      </div>
-  </div>
+  <div class="col-12 col-md-4 mt-3">
+    <button type="button" class="btn btn-outline-light me-2 store-card" style="background-image: url('https://shop-phinf.pstatic.net/20240401_119/1711953840241sTylY_PNG/%B7%CE%B0%ED-003_%282%29.png?type=w640');">
+        <svg class="bi text-muted flex-shrink-0 me-3 store-icon"><use xlink:href="#bootstrap"></use></svg>
+        <div>
+            <h4 class="fw-bold mb-0">luminant</h4>
+            <p>일상을 빛내는 주얼리</p>
+            <a class="btn btn-outline-light store-button" href="https://smartstore.naver.com/luminant_" target="_blank" role="button">Visit Store</a>
+        </div>
+    </button>
+    </div>
+
 </div>
-
 {% endblock %}

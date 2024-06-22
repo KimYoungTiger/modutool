@@ -2,33 +2,32 @@
 
 {% block head %}
 {{ super() }}
-<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-
-<div class="container" id="icon-grid" >
-
+<div class="container px-4 py-5 text-white" id="icon-grid">
+  <h1 class="pb-2 border-bottom">Every Tools</h1>
   <div class="row px-4 py-5">
     <div class="col-12 col-md-4 mt-3">
-      <button type="button" class="btn btn-outline-light me-2" style="min-height: 200px; width: 100%;" onclick="location.href='{{ url_for('tool.search_ranking_product') }}'">
-        <h2>스토어 제품 순위 검색</h2>
+      <button type="button" class="btn btn-naver" style="min-height: 200px; width: 100%;" onclick="location.href='{{ url_for('tool.search_ranking_product') }}'">
+        <h3>네이버스토어<br>제품 순위</h3>
         <p>검색했을 때 스토어의 제품 순위를 알려줍니다. 100개까지 검색됩니다.</p>
       </button>
     </div>
     <div class="col-12 col-md-4 mt-3">
-      <button type="button" class="btn btn-outline-light me-2" style="min-height: 200px; width: 100%;" onclick="location.href='http://example.com/product-list'">
-        <h2>제품별 인기 키워드 검색</h2>
+      <button type="button" class="btn btn-naver" style="min-height: 200px; width: 100%;" onclick="location.href='http://example.com/product-list'">
+        <h3>네이버스토어<br>인기 키워드 찾기</h3>
         <p>제품별 상위 노출되는 키워드를 알려줍니다.</p>
       </button>
     </div>
     <div class="col-12 col-md-4 mt-3">
-      <button type="button" class="btn btn-outline-light me-2" style="min-height: 200px; width: 100%;" onclick="location.href='{{ url_for('tool.list_product') }}'">
-        <h2>스토어 제품 리스트</h2>
+      <button type="button" class="btn btn-naver" style="min-height: 200px; width: 100%;" onclick="location.href='{{ url_for('tool.list_product') }}'">
+        <h3>네이버스토어<br>제품 리스트</h3>
         <p>스토어에 판매되고 있는 제품리스트를 순서대로 알려줍니다. 100개까지 검색됩니다.</p>
       </button>
     </div>
   </div>
+</div>
 
 
 {% endblock %}

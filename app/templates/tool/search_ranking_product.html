@@ -6,38 +6,39 @@
 
 {% block content %}
 <div class="container px-4 py-5 text-white" id="icon-grid">
-    <h2 class="pb-2 border-bottom">스토어 제품 순위 확인</h2>
+    <h2 class="pb-2 border-bottom">네이버 스토어 제품 순위 확인</h2>
 </div>
 
 <div class="container">
     <!-- Form action updated to submit to the searching route, method set to POST -->
     <form action="{{ url_for('tool.search_ranking_product') }}" method="POST" class="text-white">
-        <div class="mb-3 col-6">
+        <div class="mb-3 col-12">
             <label for="keywordInput" class="form-label">키워드</label>
             <input type="text" class="form-control" id="keywordInput" name="search_query" required>
         </div>
 
-        <div class="mb-3 col-6">
+        <div class="mb-3 col-12">
             <label for="storeNameInput" class="form-label">스토어이름</label>
             <input type="text" class="form-control" id="storeNameInput" name="store_name" required>
         </div>
 
-        <div class="mb-3 col-6">
+        <div class="mb-3 col-12">
             <label for="searchSort" class="form-label">검색기준</label>
             <div class="form-check">
                 <input id="ranking" name="search_sort" type="radio" class="form-check-input" value="sim" checked required>
-                <label class="form-check-label" for="ranking">네이버 랭킹순</label>
+                <label class="form-check-label" for="ranking">정확도순</label>
             </div>
             <div class="form-check">
                 <input id="reviews" name="search_sort" type="radio" class="form-check-input" value="sim" required>
-                <label class="form-check-label" for="reviews">리뷰 많은순</label>
+                <label class="form-check-label" for="reviews">가격 낮은순</label>
             </div>
             <div class="form-check">
                 <input id="quality" name="search_sort" type="radio" class="form-check-input" value="sim" required>
-                <label class="form-check-label" for="quality">리뷰 좋은순</label>
+                <label class="form-check-label" for="quality">가격 높은순</label>
             </div>
         </div>
-        <button type="submit" class="btn btn-secondary">순위 확인</button>
+        <button type="submit" class="btn btn-outline-light me-2">내 순위 확인</button>
+        <button type="submit" class="btn btn-outline-light me-2">상위 10개 보기</button>
     </form>
 
 

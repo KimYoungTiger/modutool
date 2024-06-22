@@ -2,7 +2,7 @@ from flask import Flask
 from config import Config
 from .extensions import db, migrate
 from .main import main as main_blueprint
-from .auth import auth as auth_name_blueprint
+from .auth import auth as auth_blueprint
 from .api import api as api_blueprint
 from .tool import tool as tool_blueprint
 
@@ -25,7 +25,7 @@ def create_app(config_class=Config):
 
     # Blueprint 등록
     app.register_blueprint(main_blueprint, url_prefix='/')
-    app.register_blueprint(auth_name_blueprint, url_prefix='/auth')
+    app.register_blueprint(auth_blueprint, url_prefix='/auth')
     app.register_blueprint(api_blueprint, url_prefix='/api')
     app.register_blueprint(tool_blueprint, url_prefix='/tool')
 

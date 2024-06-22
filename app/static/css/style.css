@@ -1,21 +1,51 @@
-/* 기본적으로 모바일 화면에서는 col-12에 의해 100% 너비를 차지합니다. */
-.inputbox-col {
-    margin: 0 auto; /* 중앙 정렬 */
+.dropdown-item:focus {
+    background-color: transparent !important; /* 클릭 시 파란색 배경 제거 */
 }
 
-/* 미디어 쿼리를 사용하여 특정 화면 너비 이상에서 고정된 너비를 적용 */
-@media (min-width: 768px) { /* 768px 이상의 화면 크기에서 적용됩니다. */
-    .inputbox-col {
-        max-width: 200px; /* 이 너비를 자유롭게 조정하여 원하는 크기 설정 */
-    }
+.dropdown-toggle::after {
+    display: none; /* 역삼각형 아이콘 숨기기 */
 }
 
-
-.clickable-div {
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block; /* 마우스 오버 시 드롭다운 메뉴 표시 */
 }
-.clickable-div:hover {
-    background-color: #495057; /* 원하는 색상으로 변경 */
-    box-shadow: 0 4px 8px rgba(211, 206, 206, 0.2);
+
+h1 {
+    font-size: 1.75rem; /* 원하는 크기로 조절 */
+}
+
+.store-card {
+    background-size: cover; /* 이미지가 박스를 꽉 채우도록 설정 */
+    background-position: center; /* 이미지를 박스 중앙에 위치 */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    width: 100%;
+    height: 100%; /* 높이를 박스와 동일하게 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 내용을 상하 정렬 */
+}
+
+.store-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.store-icon {
+    width: 1.75em;
+    height: 1.75em;
+}
+
+.btn-naver {
+    color: #00ff88; /* Bootstrap의 success 색상 */
+    border: 1px solid #00ff88;
+    background-color: transparent;
+}
+
+.btn-naver:hover {
+    background-color: #00ff88; /* 마우스를 올렸을 때의 배경 색상 */
+    color: white; /* 마우스를 올렸을 때의 텍스트 색상 */
 }
