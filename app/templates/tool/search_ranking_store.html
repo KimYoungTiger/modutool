@@ -6,31 +6,26 @@
 
 {% block content %}
 <div class="container px-4 py-5 text-white" id="icon-grid">
-    <h2 class="pb-2 border-bottom">네이버스토어 제품 리스트</h2>
+    <h2 class="pb-2 border-bottom">네이버스토어 제품 순위 확인</h2>
 </div>
 
 <div class="container">
     <!-- Form action updated to submit to the searching route, method set to POST -->
-    <form action="{{ url_for('tool.list_product') }}" method="POST" class="text-white">
-
-        <div class="mb-3 col-6 pb-3">
-            <label for="storeNameInput" class="form-label pb-1 fs-5">스토어 이름</label>
-            <input type="text" class="form-control" id="storeNameInput" name="store_name" required>
+    <form action="{{ url_for('tool.search_ranking_store') }}" method="POST" class="text-white">
+        <div class="mb-3 col-12">
+            <label for="keywordInput" class="form-label">키워드</label>
+            <input type="text" class="form-control" id="keywordInput" name="search_query" required>
         </div>
 
-        <div class="mb-3 col-6 pb-3 ">
-            <label for="searchSort" class="form-label fs-5">검색 기준</label>
+        <div class="mb-3 col-12">
+            <label for="searchSort" class="form-label">검색기준</label>
             <div class="form-check">
                 <input id="ranking" name="search_sort" type="radio" class="form-check-input" value="sim" checked required>
                 <label class="form-check-label" for="ranking">정확도순</label>
             </div>
             <div class="form-check">
-                <input id="reviews" name="search_sort" type="radio" class="form-check-input" value="date" required>
-                <label class="form-check-label" for="reviews">날짜순</label>
-            </div>
-            <div class="form-check">
-                <input id="quality" name="search_sort" type="radio" class="form-check-input" value="dsc" required>
-                <label class="form-check-label" for="quality">가격 높은순</label>
+                <input id="reviews" name="search_sort" type="radio" class="form-check-input" value="dsc" required>
+                <label class="form-check-label" for="reviews">가격 높은순</label>
             </div>
             <div class="form-check">
                 <input id="quality" name="search_sort" type="radio" class="form-check-input" value="asc" required>
@@ -45,18 +40,19 @@
                 10개
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="productCountDropdownButton">
-                <li><a class="dropdown-item count-dropdown-item" href="#" data-value="10">10개</a></li>
-                <li><a class="dropdown-item count-dropdown-item" href="#" data-value="50">50개</a></li>
-                <li><a class="dropdown-item count-dropdown-item" href="#" data-value="100">100개</a></li>
+                <li><a class="dropdown-item count-dropdown-item" href="#" data-value="10">10위</a></li>
+                <li><a class="dropdown-item count-dropdown-item" href="#" data-value="50">50위</a></li>
+                <li><a class="dropdown-item count-dropdown-item" href="#" data-value="100">100위</a></li>
                 </ul>
             </div>
             <input type="hidden" id="productCountInput" name="search_count" value="10">
         </div>
 
-        <button type="submit" class="btn btn-secondary">제품 리스트 확인</button>
+        <button type="submit" class="btn btn-outline-light me-2">랭킹 확인</button>
+
     </form>
 
-    <!-- 결과 표시 영역 -->
+
     {% if search_initiated %}
         {% if results %}
             <div class="row py-3">
@@ -74,25 +70,9 @@
     {% endif %}
 
 </div>
-
 {% endblock %}
+
 
 {% block js %}
 {{ super() }}
-<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const productCountDropdownItems = document.querySelectorAll('.dropdown-item.count-dropdown-item');
-        const productCountDropdownButton = document.getElementById('productCountDropdownButton');
-        const productCountInput = document.getElementById('productCountInput');
-
-        productCountDropdownItems.forEach(item => {
-            item.addEventListener('click', (event) => {
-                event.preventDefault();
-                const value = item.getAttribute('data-value');
-                productCountDropdownButton.textContent = item.textContent;
-                productCountInput.value = value;
-            });
-        });
-    });
-</script>
 {% endblock %}

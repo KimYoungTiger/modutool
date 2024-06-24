@@ -9,15 +9,15 @@
   <h1 class="pb-2 border-bottom">Every Tools</h1>
   <div class="row px-4 py-5">
     <div class="col-12 col-md-4 mt-3">
-      <button type="button" class="btn btn-naver" style="min-height: 200px; width: 100%;" onclick="location.href='{{ url_for('tool.search_ranking_product') }}'">
-        <h3>네이버스토어<br>제품 순위</h3>
-        <p>검색했을 때 스토어의 제품 순위를 알려줍니다. 100개까지 검색됩니다.</p>
+      <button type="button" class="btn btn-naver" style="min-height: 200px; width: 100%;" onclick="location.href='{{ url_for('tool.search_ranking_mystore') }}'">
+        <h3>네이버스토어<br>내 제품 순위</h3>
+        <p>키워드로 검색하여 내 스토어의 제품 순위를 알려줍니다. 100위까지 검색됩니다.</p>
       </button>
     </div>
     <div class="col-12 col-md-4 mt-3">
-      <button type="button" class="btn btn-naver" style="min-height: 200px; width: 100%;" onclick="location.href='http://example.com/product-list'">
-        <h3>네이버스토어<br>인기 키워드 찾기</h3>
-        <p>제품별 상위 노출되는 키워드를 알려줍니다.</p>
+      <button type="button" class="btn btn-naver" style="min-height: 200px; width: 100%;" onclick="location.href='{{ url_for('tool.search_ranking_store') }}'">
+        <h3>네이버스토어<br>키워드 제품 순위</h3>
+        <p>키워드로 검색하여 제품 순위를 알려줍니다. 100위까지 검색됩니다.</p>
       </button>
     </div>
     <div class="col-12 col-md-4 mt-3">

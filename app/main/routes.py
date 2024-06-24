@@ -22,7 +22,11 @@ def store():
 @main.route('/tool-request')
 def tool_request():
     contents = Content.query.all()
-    return render_template('tool_request/tool_list.html', contents=contents)
+    return render_template('tool_request/tool_request.html', contents=contents)
+
+@main.route('/tool-request-temp')
+def tool_request_temp():
+    return render_template('tool_request/tool_request_temp.html')
 
 @main.route('/tool-request/add', methods=['GET', 'POST'])
 def add_content():

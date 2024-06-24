@@ -1,12 +1,13 @@
-.dropdown-item:focus {
+/* 메인 메뉴 드롭다운 */
+.custom-dropdown-item:focus {
     background-color: transparent !important; /* 클릭 시 파란색 배경 제거 */
 }
 
-.dropdown-toggle::after {
+.custom-dropdown-toggle::after {
     display: none; /* 역삼각형 아이콘 숨기기 */
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
+.custom-nav-item.dropdown:hover .custom-dropdown-menu {
     display: block; /* 마우스 오버 시 드롭다운 메뉴 표시 */
 }
 
@@ -39,6 +40,8 @@ h1 {
     height: 1.75em;
 }
 
+/* 네이버 스토어 관련 디자인 */
+
 .btn-naver {
     color: #00ff88; /* Bootstrap의 success 색상 */
     border: 1px solid #00ff88;
@@ -48,4 +51,30 @@ h1 {
 .btn-naver:hover {
     background-color: #00ff88; /* 마우스를 올렸을 때의 배경 색상 */
     color: white; /* 마우스를 올렸을 때의 텍스트 색상 */
+}
+
+.li-click-item {
+    cursor: pointer;
+    transition: color 0.3s ease; /* 글자색 변화 애니메이션 */
+}
+.li-click-item:hover {
+    color: #007bff; /* 원하는 글자색으로 변경 */
+}
+
+.tool-select:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.tool-select {
+    background-color: #f8f9fa;
+
+    padding-right: 30px; /* 공간 확보 */
+    transition: all 0.3s ease;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23007bff" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px 20px;
+    width: auto;
 }
