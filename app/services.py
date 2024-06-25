@@ -80,7 +80,7 @@ def perform_search_ranking_store(search_query, search_sort, search_count):
     if(rescode==200):
         response_body = response.read()
         results = json.loads(response_body.decode('utf-8'))
-        return_value = [{'title': item['title'], 'lprice':item['lprice'], 'link': item['link']} for item in results['items']]
+        return_value = [{'title': item['title'], 'mallName':item['mallName'], 'lprice':item['lprice'], 'link': item['link']} for item in results['items']]
     else:
         return_value ="Error Code:" + rescode
         

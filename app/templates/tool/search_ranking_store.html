@@ -13,12 +13,12 @@
     <!-- Form action updated to submit to the searching route, method set to POST -->
     <form action="{{ url_for('tool.search_ranking_store') }}" method="POST" class="text-white">
         <div class="mb-3 col-12">
-            <label for="keywordInput" class="form-label">키워드</label>
+            <label for="keywordInput" class="form-label tool-form-label">키워드</label>
             <input type="text" class="form-control" id="keywordInput" name="search_query" required>
         </div>
 
         <div class="mb-3 col-12">
-            <label for="searchSort" class="form-label">검색기준</label>
+            <label for="searchSort" class="form-label tool-form-label">검색기준</label>
             <div class="form-check">
                 <input id="ranking" name="search_sort" type="radio" class="form-check-input" value="sim" checked required>
                 <label class="form-check-label" for="ranking">정확도순</label>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="mb-3 col-6 pb-3">
-            <label for="searchCount" class="form-label fs-5">검색 갯수</label>
+            <label for="searchCount" class="form-label tool-form-label">검색 갯수</label>
             <div class="dropdown" style="width: auto;">
                 <button class="btn btn-light dropdown-toggle" type="button" id="productCountDropdownButton" data-bs-toggle="dropdown" aria-expanded="false">
                 10개
@@ -59,7 +59,7 @@
                 {% for item in results %}
                     <ul class="list-group text-white bg-dark">
                         <li class="list-group-item li-click-item" style="cursor: pointer;" onclick="location.href='{{ item['link'] }}';">
-                            {{ loop.index }}. {{ item['title'] }} / {{ item['lprice'] }}원
+                            {{ loop.index }}. {{ item['title'] | safe }} / {{ item['mallName'] | safe }} / {{ item['lprice'] }}원
                         </li>
                     </ul>
                 {% endfor %}
@@ -75,4 +75,20 @@
 
 {% block js %}
 {{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const productCountDropdownItems = document.querySelectorAll('.dropdown-item.count-dropdown-item');
+        const productCountDropdownButton = document.getElementById('productCountDropdownButton');
+        const productCountInput = document.getElementById('productCountInput');
+
+        productCountDropdownItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault();
+                const value = item.getAttribute('data-value');
+                productCountDropdownButton.textContent = item.textContent;
+                productCountInput.value = value;
+            });
+        });
+    });
+</script>
 {% endblock %}

@@ -61,20 +61,6 @@ h1 {
     color: #007bff; /* 원하는 글자색으로 변경 */
 }
 
-.tool-select:focus {
-    border-color: #0056b3;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    outline: none;
-}
-
-.tool-select {
-    background-color: #f8f9fa;
-
-    padding-right: 30px; /* 공간 확보 */
-    transition: all 0.3s ease;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23007bff" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 20px 20px;
-    width: auto;
+.tool-form-label {
+    font-size: 1.25rem;
 }
